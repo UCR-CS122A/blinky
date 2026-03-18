@@ -1,0 +1,9 @@
+LOCATE COMP "clk" SITE "P6";
+IOBUF PORT "clk" IO_TYPE=LVCMOS33;
+FREQUENCY PORT "clk" 25 MHZ;
+
+// LOCATE COMP "led" SITE "A12"; // blue
+// IOBUF PORT "led" IO_TYPE=LVCMOS25;
+
+LOCATE COMP "led" SITE "T6"; // tesing gpio pin on ext board
+IOBUF PORT "led" IO_TYPE=LVCMOS33;
