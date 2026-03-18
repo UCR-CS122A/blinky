@@ -3,11 +3,13 @@
 module top_tb;
 
 logic clkin;
+logic rstin;
 wire  ledout;
 
 top blink_inst
 (
     .clk(clkin),
+    .rst(rstin),
     .led(ledout)
 );
 
@@ -21,6 +23,9 @@ end
 
 initial begin
     clkin <= 0; // start clk at 0
+    rstin <= 1;   // reset the counter to 0
+    #(CLK_PERIOD*3);
+    rstin <= 0;   // disable reset
     #(CLK_PERIOD*20); // simulate for 20 cycles
     $finish; // end simulation
 end
