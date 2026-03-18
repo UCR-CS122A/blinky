@@ -7,6 +7,7 @@ module top
 );
 
 logic [63:0] clk_div_counter;
+wire clk_2s, clk_1s, clk_0s5, clk_0s25, clk_2x_slow, clk_4x_slow, clk_8x_slow;
 
 assign clk_2s   = clk_div_counter[25]; // assuming 25MHz toggle roughly every 2s
 assign clk_1s   = clk_div_counter[24]; // assuming 25MHz toggle roughly every 1s
